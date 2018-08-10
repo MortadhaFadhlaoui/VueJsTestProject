@@ -5,8 +5,9 @@
         <li v-for="(data, index) in skills" :key="index">
           {{index}}. {{data.skill}}
         </li>
-        <p v-if="skills.length > 1"> You have more then one skills</p>
-        <p v-else> You have less than or equal to 1 skill</p>
+        <div v-bind:class="{ alert : showAlert }"></div>
+        <!--<p v-if="skills.length > 1"> You have more then one skills</p>
+        <p v-else> You have less than or equal to 1 skill</p>-->
       </ul>
     </div>
     <!--{{ name }}
@@ -30,7 +31,8 @@ export default {
               {
                   "skill": "IOS"
               }
-          ]
+          ],
+          showAlert: true
       }
     },
     methods: {
@@ -43,18 +45,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>
